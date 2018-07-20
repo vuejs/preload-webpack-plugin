@@ -14,6 +14,8 @@ This is a fork of [preload-webpack-plugin](https://github.com/GoogleChromeLabs/p
 
 - Added an `includeHtmlNames` option so that the plugin is only applied to a specific HTML file.
 
+- If you want to specify the inject position of preload/prefetch tags in your html, add `<!-- preload_start --><!-- preload_end -->` html comment tags in your [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) template file, and it will be replaced by preload/prefetch resources tags.
+
 - Drops support for Node < 6.
 
 ---

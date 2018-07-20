@@ -20,6 +20,11 @@ function insertLinksIntoHead({html, links=[]}) {
     return html;
   }
 
+  if (html.match(/<!--\s*preload_start\s*--><!--\s*preload_end\s*-->/)) {
+    //If there's a <!-- preload_start --><!-- preload_end --> to specify inject position, replace it with links
+    return html.replace(/<!--\s*preload_start\s*--><!--\s*preload_end\s*-->/, links.join(''));
+  }
+
   if (html.includes('</head>')) {
     // If a valid closing </head> is found, insert the new <link>s right before it.
     return html.replace('</head>', links.join('') + '</head>');
