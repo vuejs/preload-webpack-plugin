@@ -128,10 +128,15 @@ class PreloadPlugin {
               return
             }
             if (this.resourceHints) {
-              htmlPluginData.head = [
-                ...this.resourceHints,
-                ...htmlPluginData.head
-              ]
+              if (this.options.disableResInject) {
+                htmlPluginData.head = this.resourceHints
+                htmlPluginData.body = []
+              } else {
+                htmlPluginData.head = [
+                  ...this.resourceHints,
+                  ...htmlPluginData.head
+                ]
+              }
             }
             return htmlPluginData
           }
