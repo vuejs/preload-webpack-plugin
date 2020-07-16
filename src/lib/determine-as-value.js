@@ -19,7 +19,7 @@ const assert = require('assert')
 const path = require('path')
 const { URL } = require('url')
 
-function determineAsValue ({ optionsAs, href }) {
+function determineAsValue ({ optionsAs, href, file }) {
   assert(href, `The 'href' parameter was not provided.`)
 
   switch (typeof optionsAs) {
@@ -36,7 +36,9 @@ function determineAsValue ({ optionsAs, href }) {
       // value based on the suffix of filename.
 
       // We only care about the pathname, so just use any domain when constructing the URL.
-      const url = new URL(href, 'https://example.com')
+      // Use file instead of href option because the publicPath part may be malformed.
+      // See https://github.com/vuejs/vue-cli/issues/5672
+      const url = new URL(file || href, 'https://example.com')
       const extension = path.extname(url.pathname)
 
       if (extension === '.css') {

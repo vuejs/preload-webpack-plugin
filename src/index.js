@@ -75,7 +75,8 @@ class PreloadPlugin {
       // then we need to set the 'as' attribute correctly.
       if (options.rel === 'preload') {
         attributes.as = determineAsValue({
-          href: file,
+          href,
+          file,
           optionsAs: options.as
         })
 
