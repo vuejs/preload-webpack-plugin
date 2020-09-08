@@ -15,13 +15,31 @@
  * limitations under the License.
  */
 
-function isAsync (chunk) {
-  if ('canBeInitial' in chunk) {
-    return !chunk.canBeInitial()
-  } else {
-    return !chunk.isInitial()
-  }
-}
+function extractChunks({compilation, optionsInclude}) {
+  try {
+    // 'asyncChunks' are chunks intended for lazy/async loading usually generated as
+    // part of code-splitting with import() or require.ensure(). By default, asyncChunks
+    // get wired up using link rel=preload when using this plugin. This behavior can be
+    // configured to preload all types of chunks or just prefetch chunks as needed.
+    if (optionsInclude === undefined || optionsInclude === 'asyncChunks') {
+      return compilation.chunks.filter(chunk => {
+        if ('canBeInitial' in chunk) {
+          return !chunk.canBeInitial();
+        } else {
+          return !chunk.isInitial();
+        }
+      });
+    }
+
+    if (optionsInclude === 'initial') {
+      return compilation.chunks.filter(chunk => {
+        if ('canBeInitial' in chunk) {
+          return chunk.canBeInitial();
+        } else {
+          return chunk.isInitial();
+        }
+      });
+    }
 
 function getChunkEntryNames (chunk) {
   if ('groupsIterable' in chunk) {

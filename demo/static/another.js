@@ -1,1 +1,0 @@
-webpackJsonp([3],{355:function(o,n,e){o.exports=e(356)},356:function(o,n){console.log("I am another page")}},[355]);
