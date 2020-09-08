@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2019 Google Inc.
+ * Copyright 2020 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ const insertLinksIntoHead = require('./lib/insert-links-into-head');
 
 class PreloadPlugin {
   constructor(options) {
-    this.options = Object.assign({}, defaultOptions, options);
+    this.options = Object.assign({}, defaultOptions, options)
   }
 
   addLinks(compilation, htmlPluginData) {
@@ -38,8 +38,8 @@ class PreloadPlugin {
 
     const extractedChunks = extractChunks({
       compilation,
-      optionsInclude: options.include,
-    });
+      optionsInclude: options.include
+    })
 
     // Flatten the list of files.
     const allFiles = extractedChunks.reduce((accumulated, chunk) => {
@@ -50,25 +50,25 @@ class PreloadPlugin {
       return (
         !this.options.fileWhitelist ||
         this.options.fileWhitelist.some(regex => regex.test(file))
-      );
+      )
     }).filter(file => {
       return (
         !this.options.fileBlacklist ||
         this.options.fileBlacklist.every(regex => !regex.test(file))
-      );
-    });
+      )
+    })
     // Sort to ensure the output is predictable.
-    const sortedFilteredFiles = filteredFiles.sort();
+    const sortedFilteredFiles = filteredFiles.sort()
 
-    const links = [];
-    const publicPath = compilation.outputOptions.publicPath || '';
+    const links = []
+    const publicPath = compilation.outputOptions.publicPath || ''
     for (const file of sortedFilteredFiles) {
-      const href = `${publicPath}${file}`;
+      const href = `${publicPath}${file}`
 
       const attributes = {
         href,
-        rel: options.rel,
-      };
+        rel: options.rel
+      }
 
       // See https://github.com/GoogleChromeLabs/preload-webpack-plugin/issues/69
       if (options.media) {
@@ -80,8 +80,9 @@ class PreloadPlugin {
       if (options.rel === 'preload') {
         attributes.as = determineAsValue({
           href,
-          optionsAs: options.as,
-        });
+          file,
+          optionsAs: options.as
+        })
 
         // On the off chance that we have an 'href' attribute with a
         // cross-origin URL, set crossOrigin on the <link> to trigger CORS mode.
@@ -91,49 +92,44 @@ class PreloadPlugin {
         }
       }
 
-      const linkElementString = createHTMLElementString({
-        attributes,
-        elementName: 'link',
-      });
-      links.push(linkElementString);
+      links.push({
+        tagName: 'link',
+        attributes
+      })
     }
 
-    htmlPluginData.html = insertLinksIntoHead({
-      links,
-      html: htmlPluginData.html,
-    });
-
-    return htmlPluginData;
+    this.resourceHints = links
+    return htmlPluginData
   }
 
   apply(compiler) {
     compiler.hooks.compilation.tap(
-        this.constructor.name,
-        compilation => {
-          // This is set in html-webpack-plugin pre-v4.
-          let hook = compilation.hooks.htmlWebpackPluginAfterHtmlProcessing;
+      this.constructor.name,
+      compilation => {
+        // This is set in html-webpack-plugin pre-v4.
+        let hook = compilation.hooks.htmlWebpackPluginAfterHtmlProcessing;
 
-          if (!hook) {
-            const [HtmlWebpackPlugin] = compiler.options.plugins.filter(
-                (plugin) => plugin.constructor.name === 'HtmlWebpackPlugin');
-            assert(HtmlWebpackPlugin, 'Unable to find an instance of ' +
-                'HtmlWebpackPlugin in the current compilation.');
-            hook = HtmlWebpackPlugin.constructor.getHooks(compilation).beforeEmit;
-          }
-
-          hook.tapAsync(
-              this.constructor.name,
-              (htmlPluginData, callback) => {
-                try {
-                  callback(null, this.addLinks(compilation, htmlPluginData));
-                } catch (error) {
-                  callback(error);
-                }
-              }
-          );
+        if (!hook) {
+          const [HtmlWebpackPlugin] = compiler.options.plugins.filter(
+            (plugin) => plugin.constructor.name === 'HtmlWebpackPlugin');
+          assert(HtmlWebpackPlugin, 'Unable to find an instance of ' +
+            'HtmlWebpackPlugin in the current compilation.');
+          hook = HtmlWebpackPlugin.constructor.getHooks(compilation).beforeEmit;
         }
+
+        hook.tapAsync(
+          this.constructor.name,
+          (htmlPluginData, callback) => {
+            try {
+              callback(null, this.addLinks(compilation, htmlPluginData));
+            } catch (error) {
+              callback(error);
+            }
+          }
+        );
+      }
     );
   }
 }
 
-module.exports = PreloadPlugin;
+module.exports = PreloadPlugin

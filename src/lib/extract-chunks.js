@@ -41,26 +41,86 @@ function extractChunks({compilation, optionsInclude}) {
       });
     }
 
-    if (optionsInclude === 'allChunks') {
-      // Async chunks, vendor chunks, normal chunks.
-      return compilation.chunks;
-    }
-
-    if (optionsInclude === 'allAssets') {
-      // Every asset, regardless of which chunk it's in.
-      // Wrap it in a single, "psuedo-chunk" return value.
-      return [{files: Object.keys(compilation.assets)}];
-    }
-
-    if (Array.isArray(optionsInclude)) {
-      // Keep only user specified chunks.
-      return compilation.chunks.filter((chunk) => chunk.name && optionsInclude.includes(chunk.name));
-    }
-  } catch (error) {
-    return compilation.chunks;
+function getChunkEntryNames (chunk) {
+  if ('groupsIterable' in chunk) {
+    return Array.from(new Set(getNames(chunk.groupsIterable)))
+  } else {
+    return chunk.entrypoints.map(e => e.options.name)
   }
-
-  throw new Error(`The 'include' option isn't set to a recognized value: ${optionsInclude}`);
 }
 
-module.exports = extractChunks;
+function getNames (groups, processed = new Set()) {
+  const Entrypoint = require('webpack/lib/Entrypoint')
+  const names = []
+  for (const group of groups) {
+    if (group instanceof Entrypoint) {
+      // entrypoint
+      if (group.options.name) {
+        names.push(group.options.name)
+      }
+    } else if (!processed.has(group)) {
+      processed.add(group)
+      names.push(...getNames(group.parentsIterable, processed))
+    }
+  }
+  return names
+}
+
+function extractChunks ({ compilation, optionsInclude }) {
+  let includeChunks
+  let includeType
+  let includeEntryPoints
+  if (optionsInclude && typeof optionsInclude === 'object') {
+    includeType = optionsInclude.type
+    includeChunks = optionsInclude.chunks
+    includeEntryPoints = optionsInclude.entries
+  } else {
+    if (Array.isArray(optionsInclude)) {
+      includeChunks = optionsInclude
+    } else {
+      includeType = optionsInclude
+    }
+  }
+
+  let chunks = compilation.chunks
+
+  if (Array.isArray(includeChunks)) {
+    chunks = chunks.filter((chunk) => {
+      return chunk.name && includeChunks.includes(chunk.name)
+    })
+  }
+
+  if (Array.isArray(includeEntryPoints)) {
+    chunks = chunks.filter(chunk => {
+      const names = getChunkEntryNames(chunk)
+      return names.some(name => includeEntryPoints.includes(name))
+    })
+  }
+
+  // 'asyncChunks' are chunks intended for lazy/async loading usually generated as
+  // part of code-splitting with import() or require.ensure(). By default, asyncChunks
+  // get wired up using link rel=preload when using this plugin. This behaviour can be
+  // configured to preload all types of chunks or just prefetch chunks as needed.
+  if (includeType === undefined || includeType === 'asyncChunks') {
+    return chunks.filter(isAsync)
+  }
+
+  if (includeType === 'initial') {
+    return chunks.filter(chunk => !isAsync(chunk))
+  }
+
+  if (includeType === 'allChunks') {
+    // Async chunks, vendor chunks, normal chunks.
+    return chunks
+  }
+
+  if (includeType === 'allAssets') {
+    // Every asset, regardless of which chunk it's in.
+    // Wrap it in a single, "psuedo-chunk" return value.
+    return [{ files: Object.keys(compilation.assets) }]
+  }
+
+  return chunks
+}
+
+module.exports = extractChunks

@@ -1,8 +1,30 @@
-# preload-webpack-plugin
+# @vue/preload-webpack-plugin
 
 [![NPM version][npm-img]][npm-url]
-[![NPM downloads][npm-downloads-img]][npm-url]
-[![Dependency Status][daviddm-img]][daviddm-url]
+
+This is a fork of [preload-webpack-plugin](https://github.com/GoogleChromeLabs/preload-webpack-plugin) with a number of changes:
+
+- Uses a combination of `htmlWebpackPluginBeforeHtmlProcessing` and `htmlWebpackPluginAlterAssetTags` hooks to inject links as objects rather than strings. This allows for more flexibility when the tags need to be altered by other plugins.
+
+- `include` option can be an object in the shape of `{ type?, chunks?, entries? }`. For example, to prefetch async chunks for a specific entry point:
+
+  ```js
+  {
+    rel: 'prefetch',
+    include: {
+      type: 'asyncChunks',
+      entries: ['app']
+    }
+  }
+  ```
+
+- Added an `includeHtmlNames` option so that the plugin is only applied to a specific HTML file.
+
+- Drops support for webpack v3.
+
+- Drops support for Node < 6.
+
+---
 
 ![preloads-plugin-compressor](https://cloud.githubusercontent.com/assets/110953/22451103/7700b812-e720-11e6-89e8-a6d4e3533159.png)
 
@@ -47,16 +69,13 @@ $ npm install --save-dev preload-webpack-plugin
 In your webpack config, `require()` the preload plugin as follows:
 
 ```js
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
+const PreloadWebpackPlugin = require("preload-webpack-plugin");
 ```
 
 and finally, add the plugin to your webpack configuration's `plugins` array after `HtmlWebpackPlugin`:
 
 ```js
-plugins: [
-  new HtmlWebpackPlugin(),
-  new PreloadWebpackPlugin()
-]
+plugins: [new HtmlWebpackPlugin(), new PreloadWebpackPlugin()];
 ```
 
 When preloading files, the plugin will use different `as` attribute depends on the type of each
@@ -71,10 +90,10 @@ explicitly name it using `as`:
 plugins: [
   new HtmlWebpackPlugin(),
   new PreloadWebpackPlugin({
-    rel: 'preload',
-    as: 'script'
-  })
-]
+    rel: "preload",
+    as: "script",
+  }),
+];
 ```
 
 In case you need more fine-grained control of the `as` attribute, you could also
@@ -85,15 +104,15 @@ parameter, and function itself should return a string for `as` attribute:
 plugins: [
   new HtmlWebpackPlugin(),
   new PreloadWebpackPlugin({
-    rel: 'preload',
+    rel: "preload",
     as(entry) {
-      if (/\.css$/.test(entry)) return 'style';
-      if (/\.woff$/.test(entry)) return 'font';
-      if (/\.png$/.test(entry)) return 'image';
-      return 'script';
-    }
-  })
-]
+      if (/\.css$/.test(entry)) return "style";
+      if (/\.woff$/.test(entry)) return "font";
+      if (/\.png$/.test(entry)) return "image";
+      return "script";
+    },
+  }),
+];
 ```
 
 Notice that if `as=font` is used in preload, the `crossorigin` will also be
@@ -108,10 +127,10 @@ By default, the plugin will assume async script chunks will be preloaded. This i
 plugins: [
   new HtmlWebpackPlugin(),
   new PreloadWebpackPlugin({
-    rel: 'preload',
-    include: 'asyncChunks'
-  })
-]
+    rel: "preload",
+    include: "asyncChunks",
+  }),
+];
 ```
 
 For a project generating two async scripts with dynamically generated names, such as
@@ -119,8 +138,8 @@ For a project generating two async scripts with dynamically generated names, suc
 will be injected into the document `<head>`:
 
 ```html
-<link rel="preload" as="script" href="chunk.31132ae6680e598f8879.js">
-<link rel="preload" as="script" href="chunk.d15e7fdfc91b34bb78c4.js">
+<link rel="preload" as="script" href="chunk.31132ae6680e598f8879.js" />
+<link rel="preload" as="script" href="chunk.d15e7fdfc91b34bb78c4.js" />
 ```
 
 You can also configure the plugin to preload all chunks (vendor, async, and normal chunks) using
@@ -134,10 +153,10 @@ belong to a chunk, you can use `include: 'allAssets'`.
 plugins: [
   new HtmlWebpackPlugin(),
   new PreloadWebpackPlugin({
-    rel: 'preload',
-    include: 'allChunks' // or 'initial', or 'allAssets'
-  })
-]
+    rel: "preload",
+    include: "allChunks", // or 'initial', or 'allAssets'
+  }),
+];
 ```
 
 In case you work with named chunks, you can explicitly specify which ones to `include` by passing an array:
@@ -146,16 +165,16 @@ In case you work with named chunks, you can explicitly specify which ones to `in
 plugins: [
   new HtmlWebpackPlugin(),
   new PreloadWebpackPlugin({
-    rel: 'preload',
-    include: ['home']
-  })
-]
+    rel: "preload",
+    include: ["home"],
+  }),
+];
 ```
 
 will inject just this:
 
 ```html
-<link rel="preload" as="script" href="home.31132ae6680e598f8879.js">
+<link rel="preload" as="script" href="home.31132ae6680e598f8879.js" />
 ```
 
 ### Filtering chunks
@@ -164,16 +183,16 @@ There may be chunks that you don't want to have preloaded (sourcemaps, for examp
 
 ```js
 new PreloadWebpackPlugin({
-  fileBlacklist: [/\.whatever/]
-})
+  fileBlacklist: [/\.whatever/],
+});
 ```
 
 Passing your own array will override the default, so if you want to continue filtering sourcemaps along with your own custom settings, you'll need to include the regex for sourcemaps:
 
 ```js
 new PreloadWebpackPlugin({
-  fileBlacklist: [/\.map/, /\.whatever/]
-})
+  fileBlacklist: [/\.map/, /\.whatever/],
+});
 ```
 
 ## Filtering HTML
@@ -209,16 +228,16 @@ Prefetch:
 plugins: [
   new HtmlWebpackPlugin(),
   new PreloadWebpackPlugin({
-    rel: 'prefetch'
-  })
-]
+    rel: "prefetch",
+  }),
+];
 ```
 
 For the async chunks mentioned earlier, the plugin would update your HTML to the following:
 
 ```html
-<link rel="prefetch" href="chunk.31132ae6680e598f8879.js">
-<link rel="prefetch" href="chunk.d15e7fdfc91b34bb78c4.js">
+<link rel="prefetch" href="chunk.31132ae6680e598f8879.js" />
+<link rel="prefetch" href="chunk.d15e7fdfc91b34bb78c4.js" />
 ```
 
 ## Including media
@@ -231,10 +250,10 @@ You can pass the value for the media attribute in the `media` option:
 plugins: [
   new HtmlWebpackPlugin(),
   new PreloadWebpackPlugin({
-    rel: 'preload',
-    media: '(min-width: 600px)'
-  })
-]
+    rel: "preload",
+    media: "(min-width: 600px)",
+  }),
+];
 ```
 
 ## Support
@@ -286,22 +305,19 @@ The project is written in ES2015, and is transpiled to support node 6 and above.
 Copyright 2019 Google, Inc.
 
 Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements.  See the NOTICE file distributed with this work for
-additional information regarding copyright ownership.  The ASF licenses this
+license agreements. See the NOTICE file distributed with this work for
+additional information regarding copyright ownership. The ASF licenses this
 file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
+use this file except in compliance with the License. You may obtain a copy of
 the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations under
 the License.
 
-[npm-url]: https://npmjs.org/package/preload-webpack-plugin
-[npm-img]: https://badge.fury.io/js/preload-webpack-plugin.svg
-[npm-downloads-img]: https://img.shields.io/npm/dm/preload-webpack-plugin.svg?style=flat-square
-[daviddm-img]: https://david-dm.org/googlechromelabs/preload-webpack-plugin.svg
-[daviddm-url]: https://david-dm.org/googlechromelabs/preload-webpack-plugin
+[npm-url]: https://www.npmjs.com/package/@vue/preload-webpack-plugin
+[npm-img]: https://badge.fury.io/js/%40vue%2Fpreload-webpack-plugin.svg
