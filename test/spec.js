@@ -667,4 +667,40 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
       compiler.outputFileSystem = fs
     })
   })
+
+  describe(`${descriptionPrefix} When html-webpack-plugin filtering Chunks, it`, function () {
+    it('should filter chunks', function (done) {
+      const fs = new MemoryFileSystem()
+      const compiler = webpack({
+        entry: {
+          theFirstEntry: path.join(__dirname, 'fixtures', 'file.js'),
+          theSecondEntry: path.join(__dirname, 'fixtures', 'vendor.js')
+        },
+        output: {
+          path: OUTPUT_DIR,
+          filename: '[name].js'
+        },
+        plugins: [
+          new HtmlWebpackPlugin({
+            chunks: ['theSecondEntry']
+          }),
+          new PreloadPlugin()
+        ]
+      }, function (err, result) {
+        expect(err).toBeFalsy(err)
+        expect(result.compilation.errors.length).toBe(0,
+          result.compilation.errors.join('\n=========\n'))
+
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
+        const dom = new JSDOM(html)
+
+        const links = dom.window.document.head.querySelectorAll('link')
+        expect(links.length).toBe(0)
+
+        done()
+      })
+
+      compiler.outputFileSystem = fs
+    })
+  })
 }
