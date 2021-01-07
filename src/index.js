@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const defaultOptions = require('./lib/default-options')
 const determineAsValue = require('./lib/determine-as-value')
 const doesChunkBelongToHTML = require('./lib/does-chunk-belong-to-html')
@@ -33,18 +33,23 @@ class PreloadPlugin {
     })
 
     const htmlChunks = options.include === 'allAssets'
-      // Handle all chunks.
+    // Handle all chunks.
       ? extractedChunks
-      // Only handle chunks imported by this HtmlWebpackPlugin.
+    // Only handle chunks imported by this HtmlWebpackPlugin.
       : extractedChunks.filter((chunk) => doesChunkBelongToHTML({
         chunk,
         compilation,
-        htmlAssetsChunks: Object.values(htmlPluginData.assets.chunks)
+        htmlPluginData,
+        pluginOptions: options
       }))
 
     // Flatten the list of files.
     const allFiles = htmlChunks.reduce((accumulated, chunk) => {
-      return accumulated.concat(chunk.files)
+      return accumulated.concat([
+        ...chunk.files,
+        // sourcemap files are inside auxiliaryFiles in webpack5
+        ...chunk.auxiliaryFiles || []
+      ])
     }, [])
     const uniqueFiles = new Set(allFiles)
     const filteredFiles = [...uniqueFiles].filter(file => {
@@ -62,7 +67,10 @@ class PreloadPlugin {
     const sortedFilteredFiles = filteredFiles.sort()
 
     const links = []
-    const publicPath = compilation.outputOptions.publicPath || ''
+    const webpackPublicPath = compilation.outputOptions.publicPath
+    // webpack 5 set publicPath default value 'auto'
+    const isPublicPathDefined = webpackPublicPath.trim() !== '' && webpackPublicPath !== 'auto'
+    const publicPath = isPublicPathDefined ? webpackPublicPath : ''
     for (const file of sortedFilteredFiles) {
       const href = `${publicPath}${file}`
 
@@ -112,26 +120,28 @@ class PreloadPlugin {
     compiler.hooks.compilation.tap(
       this.constructor.name,
       compilation => {
-        compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tap(
+        HtmlWebpackPlugin.getHooks(compilation).beforeAssetTagGeneration.tapAsync(
           this.constructor.name,
-          (htmlPluginData) => {
+          (htmlPluginData, callback) => {
             if (skip(htmlPluginData)) {
+              callback()
               return
             }
             this.generateLinks(compilation, htmlPluginData)
+            callback()
           }
         )
 
-        compilation.hooks.htmlWebpackPluginAlterAssetTags.tap(
+        HtmlWebpackPlugin.getHooks(compilation).alterAssetTags.tap(
           this.constructor.name,
           (htmlPluginData) => {
             if (skip(htmlPluginData)) {
               return
             }
             if (this.resourceHints) {
-              htmlPluginData.head = [
+              htmlPluginData.assetTags.styles = [
                 ...this.resourceHints,
-                ...htmlPluginData.head
+                ...htmlPluginData.assetTags.styles
               ]
             }
             return htmlPluginData

@@ -15,16 +15,22 @@
  * limitations under the License.
  */
 
-module.exports = function doesChunkBelongToHtml ({ chunk, htmlAssetsChunks, compilation }) {
-  // Get all the hashes of the HTML assets.
-  const rootHashes = Object.values(htmlAssetsChunks).map(({ hash }) => hash)
-  // Get a list of chunk groups that contain one of those hashes.
-  const rootChunkGroups = compilation.chunkGroups.filter((chunkGroup) => {
-    return chunkGroup.chunks.filter((chunk) => rootHashes.includes(chunk.renderedHash))
-  })
-  // Get an id for each of those chunk groups.
-  const rootChunkGroupsIds = new Set(rootChunkGroups.map(({ id }) => id))
-  // Return true iff the chunk we're passed belongs to a group whose id is in
-  // the list of root chunk groups.
-  return Array.from(chunk.groupsIterable).some(({ id }) => rootChunkGroupsIds.has(id))
+module.exports = function doesChunkBelongToHtml ({
+  chunk,
+  compilation,
+  htmlPluginData,
+  pluginOptions
+}) {
+  // // Get all the hashes of the HTML assets.
+  // const rootHashes = Object.values(htmlAssetsChunks).map(({ hash }) => hash)
+  // // Get a list of chunk groups that contain one of those hashes.
+  // const rootChunkGroups = compilation.chunkGroups.filter((chunkGroup) => {
+  //   return chunkGroup.chunks.filter((chunk) => rootHashes.includes(chunk.renderedHash))
+  // })
+  // // Get an id for each of those chunk groups.
+  // const rootChunkGroupsIds = new Set(rootChunkGroups.map(({ id }) => id))
+  // // Return true iff the chunk we're passed belongs to a group whose id is in
+  // // the list of root chunk groups.
+  // return Array.from(chunk.groupsIterable).some(({ id }) => rootChunkGroupsIds.has(id))
+  return true
 }
