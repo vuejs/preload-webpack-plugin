@@ -22,16 +22,22 @@ module.exports = function doesChunkBelongToHtml ({
   htmlPluginData,
   pluginOptions
 }) {
-  const includesChunks = htmlPluginData.plugin.options.chunks || []
-  // user defined chunks for html-webpack-lugin
-  if (includesChunks.length > 0) {
-    const chunkName = recursiveChunkEntryName(chunk)
-    if (includesChunks.includes(chunkName)) {
-      return true
-    } else {
-      return false
-    }
+  const chunkName = recursiveChunkEntryName(chunk)
+  const options = htmlPluginData.plugin.options
+  return isChunksFiltered(chunkName, options.chunks, options.excludeChunks)
+}
+
+// modify from html-webpack-plugin/index.js `filterChunks`
+function isChunksFiltered (chunkName, includedChunks, excludedChunks) {
+  // Skip if the chunks should be filtered and the given chunk was not added explicity
+  if (Array.isArray(includedChunks) && includedChunks.indexOf(chunkName) === -1) {
+    return false
   }
+  // Skip if the chunks should be filtered and the given chunk was excluded explicity
+  if (Array.isArray(excludedChunks) && excludedChunks.indexOf(chunkName) !== -1) {
+    return false
+  }
+  // Add otherwise
   return true
 }
 
