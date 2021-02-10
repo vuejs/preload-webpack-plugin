@@ -4,7 +4,7 @@
 
 "@types/eslint-scope@^3.7.0":
   version "3.7.0"
-  resolved "http://registry.npm.sdp.nd/@types/eslint-scope/download/@types/eslint-scope-3.7.0.tgz#4792816e31119ebd506902a482caec4951fabd86"
+  resolved "http://registry.yarnpkg.com/@types/eslint-scope/download/@types/eslint-scope-3.7.0.tgz#4792816e31119ebd506902a482caec4951fabd86"
   integrity sha1-R5KBbjERnr1QaQKkgsrsSVH6vYY=
   dependencies:
     "@types/eslint" "*"
@@ -12,7 +12,7 @@
 
 "@types/eslint@*":
   version "7.2.6"
-  resolved "http://registry.npm.sdp.nd/@types/eslint/download/@types/eslint-7.2.6.tgz#5e9aff555a975596c03a98b59ecd103decc70c3c"
+  resolved "http://registry.yarnpkg.com/@types/eslint/download/@types/eslint-7.2.6.tgz#5e9aff555a975596c03a98b59ecd103decc70c3c"
   integrity sha1-Xpr/VVqXVZbAOpi1ns0QPezHDDw=
   dependencies:
     "@types/estree" "*"
@@ -20,27 +20,27 @@
 
 "@types/estree@*", "@types/estree@^0.0.45":
   version "0.0.45"
-  resolved "http://registry.npm.sdp.nd/@types/estree/download/@types/estree-0.0.45.tgz#e9387572998e5ecdac221950dab3e8c3b16af884"
+  resolved "http://registry.yarnpkg.com/@types/estree/download/@types/estree-0.0.45.tgz#e9387572998e5ecdac221950dab3e8c3b16af884"
   integrity sha1-6Th1cpmOXs2sIhlQ2rPow7Fq+IQ=
 
 "@types/html-minifier-terser@^5.0.0":
   version "5.1.1"
-  resolved "http://registry.npm.sdp.nd/@types/html-minifier-terser/download/@types/html-minifier-terser-5.1.1.tgz#3c9ee980f1a10d6021ae6632ca3e79ca2ec4fb50"
+  resolved "http://registry.yarnpkg.com/@types/html-minifier-terser/download/@types/html-minifier-terser-5.1.1.tgz#3c9ee980f1a10d6021ae6632ca3e79ca2ec4fb50"
   integrity sha1-PJ7pgPGhDWAhrmYyyj55yi7E+1A=
 
 "@types/json-schema@*", "@types/json-schema@^7.0.6":
   version "7.0.6"
-  resolved "http://registry.npm.sdp.nd/@types/json-schema/download/@types/json-schema-7.0.6.tgz#f4c7ec43e81b319a9815115031709f26987891f0"
+  resolved "http://registry.yarnpkg.com/@types/json-schema/download/@types/json-schema-7.0.6.tgz#f4c7ec43e81b319a9815115031709f26987891f0"
   integrity sha1-9MfsQ+gbMZqYFRFQMXCfJph4kfA=
 
 "@types/node@*":
   version "14.14.20"
-  resolved "http://registry.npm.sdp.nd/@types/node/download/@types/node-14.14.20.tgz#f7974863edd21d1f8a494a73e8e2b3658615c340"
+  resolved "http://registry.yarnpkg.com/@types/node/download/@types/node-14.14.20.tgz#f7974863edd21d1f8a494a73e8e2b3658615c340"
   integrity sha1-95dIY+3SHR+KSUpz6OKzZYYVw0A=
 
 "@webassemblyjs/ast@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/ast/download/@webassemblyjs/ast-1.9.1.tgz#76c6937716d68bf1484c15139f5ed30b9abc8bb4"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/ast/download/@webassemblyjs/ast-1.9.1.tgz#76c6937716d68bf1484c15139f5ed30b9abc8bb4"
   integrity sha1-dsaTdxbWi/FITBUTn17TC5q8i7Q=
   dependencies:
     "@webassemblyjs/helper-module-context" "1.9.1"
@@ -49,46 +49,46 @@
 
 "@webassemblyjs/floating-point-hex-parser@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/floating-point-hex-parser/download/@webassemblyjs/floating-point-hex-parser-1.9.1.tgz#9eb0ff90a1cdeef51f36ba533ed9f06b5cdadd09"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/floating-point-hex-parser/download/@webassemblyjs/floating-point-hex-parser-1.9.1.tgz#9eb0ff90a1cdeef51f36ba533ed9f06b5cdadd09"
   integrity sha1-nrD/kKHN7vUfNrpTPtnwa1za3Qk=
 
 "@webassemblyjs/helper-api-error@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/helper-api-error/download/@webassemblyjs/helper-api-error-1.9.1.tgz#ad89015c4246cd7f5ed0556700237f8b9c2c752f"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/helper-api-error/download/@webassemblyjs/helper-api-error-1.9.1.tgz#ad89015c4246cd7f5ed0556700237f8b9c2c752f"
   integrity sha1-rYkBXEJGzX9e0FVnACN/i5wsdS8=
 
 "@webassemblyjs/helper-buffer@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/helper-buffer/download/@webassemblyjs/helper-buffer-1.9.1.tgz#186e67ac25f9546ea7939759413987f157524133"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/helper-buffer/download/@webassemblyjs/helper-buffer-1.9.1.tgz#186e67ac25f9546ea7939759413987f157524133"
   integrity sha1-GG5nrCX5VG6nk5dZQTmH8VdSQTM=
 
 "@webassemblyjs/helper-code-frame@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/helper-code-frame/download/@webassemblyjs/helper-code-frame-1.9.1.tgz#aab177b7cc87a318a8f8664ad68e2c3828ebc42b"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/helper-code-frame/download/@webassemblyjs/helper-code-frame-1.9.1.tgz#aab177b7cc87a318a8f8664ad68e2c3828ebc42b"
   integrity sha1-qrF3t8yHoxio+GZK1o4sOCjrxCs=
   dependencies:
     "@webassemblyjs/wast-printer" "1.9.1"
 
 "@webassemblyjs/helper-fsm@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/helper-fsm/download/@webassemblyjs/helper-fsm-1.9.1.tgz#527e91628e84d13d3573884b3dc4c53a81dcb911"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/helper-fsm/download/@webassemblyjs/helper-fsm-1.9.1.tgz#527e91628e84d13d3573884b3dc4c53a81dcb911"
   integrity sha1-Un6RYo6E0T01c4hLPcTFOoHcuRE=
 
 "@webassemblyjs/helper-module-context@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/helper-module-context/download/@webassemblyjs/helper-module-context-1.9.1.tgz#778670b3d471f7cf093d1e7c0dde431b54310e16"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/helper-module-context/download/@webassemblyjs/helper-module-context-1.9.1.tgz#778670b3d471f7cf093d1e7c0dde431b54310e16"
   integrity sha1-d4Zws9Rx988JPR58Dd5DG1QxDhY=
   dependencies:
     "@webassemblyjs/ast" "1.9.1"
 
 "@webassemblyjs/helper-wasm-bytecode@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/helper-wasm-bytecode/download/@webassemblyjs/helper-wasm-bytecode-1.9.1.tgz#563f59bcf409ccf469edde168b9426961ffbf6df"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/helper-wasm-bytecode/download/@webassemblyjs/helper-wasm-bytecode-1.9.1.tgz#563f59bcf409ccf469edde168b9426961ffbf6df"
   integrity sha1-Vj9ZvPQJzPRp7d4Wi5Qmlh/79t8=
 
 "@webassemblyjs/helper-wasm-section@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/helper-wasm-section/download/@webassemblyjs/helper-wasm-section-1.9.1.tgz#f7988f94c12b01b99a16120cb01dc099b00e4798"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/helper-wasm-section/download/@webassemblyjs/helper-wasm-section-1.9.1.tgz#f7988f94c12b01b99a16120cb01dc099b00e4798"
   integrity sha1-95iPlMErAbmaFhIMsB3AmbAOR5g=
   dependencies:
     "@webassemblyjs/ast" "1.9.1"
@@ -98,26 +98,26 @@
 
 "@webassemblyjs/ieee754@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/ieee754/download/@webassemblyjs/ieee754-1.9.1.tgz#3b715871ca7d75784717cf9ceca9d7b81374b8af"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/ieee754/download/@webassemblyjs/ieee754-1.9.1.tgz#3b715871ca7d75784717cf9ceca9d7b81374b8af"
   integrity sha1-O3FYccp9dXhHF8+c7KnXuBN0uK8=
   dependencies:
     "@xtuc/ieee754" "^1.2.0"
 
 "@webassemblyjs/leb128@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/leb128/download/@webassemblyjs/leb128-1.9.1.tgz#b2ecaa39f9e8277cc9c707c1ca8b2aa7b27d0b72"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/leb128/download/@webassemblyjs/leb128-1.9.1.tgz#b2ecaa39f9e8277cc9c707c1ca8b2aa7b27d0b72"
   integrity sha1-suyqOfnoJ3zJxwfByosqp7J9C3I=
   dependencies:
     "@xtuc/long" "4.2.2"
 
 "@webassemblyjs/utf8@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/utf8/download/@webassemblyjs/utf8-1.9.1.tgz#d02d9daab85cda3211e43caf31dca74c260a73b0"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/utf8/download/@webassemblyjs/utf8-1.9.1.tgz#d02d9daab85cda3211e43caf31dca74c260a73b0"
   integrity sha1-0C2dqrhc2jIR5DyvMdynTCYKc7A=
 
 "@webassemblyjs/wasm-edit@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/wasm-edit/download/@webassemblyjs/wasm-edit-1.9.1.tgz#e27a6bdbf78e5c72fa812a2fc3cbaad7c3e37578"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/wasm-edit/download/@webassemblyjs/wasm-edit-1.9.1.tgz#e27a6bdbf78e5c72fa812a2fc3cbaad7c3e37578"
   integrity sha1-4npr2/eOXHL6gSovw8uq18PjdXg=
   dependencies:
     "@webassemblyjs/ast" "1.9.1"
@@ -131,7 +131,7 @@
 
 "@webassemblyjs/wasm-gen@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/wasm-gen/download/@webassemblyjs/wasm-gen-1.9.1.tgz#56a0787d1fa7994fdc7bea59004e5bec7189c5fc"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/wasm-gen/download/@webassemblyjs/wasm-gen-1.9.1.tgz#56a0787d1fa7994fdc7bea59004e5bec7189c5fc"
   integrity sha1-VqB4fR+nmU/ce+pZAE5b7HGJxfw=
   dependencies:
     "@webassemblyjs/ast" "1.9.1"
@@ -142,7 +142,7 @@
 
 "@webassemblyjs/wasm-opt@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/wasm-opt/download/@webassemblyjs/wasm-opt-1.9.1.tgz#fbdf8943a825e6dcc4cd69c3e092289fa4aec96c"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/wasm-opt/download/@webassemblyjs/wasm-opt-1.9.1.tgz#fbdf8943a825e6dcc4cd69c3e092289fa4aec96c"
   integrity sha1-+9+JQ6gl5tzEzWnD4JIon6SuyWw=
   dependencies:
     "@webassemblyjs/ast" "1.9.1"
@@ -152,7 +152,7 @@
 
 "@webassemblyjs/wasm-parser@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/wasm-parser/download/@webassemblyjs/wasm-parser-1.9.1.tgz#5e8352a246d3f605312c8e414f7990de55aaedfa"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/wasm-parser/download/@webassemblyjs/wasm-parser-1.9.1.tgz#5e8352a246d3f605312c8e414f7990de55aaedfa"
   integrity sha1-XoNSokbT9gUxLI5BT3mQ3lWq7fo=
   dependencies:
     "@webassemblyjs/ast" "1.9.1"
@@ -164,7 +164,7 @@
 
 "@webassemblyjs/wast-parser@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/wast-parser/download/@webassemblyjs/wast-parser-1.9.1.tgz#e25ef13585c060073c1db0d6bd94340fdeee7596"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/wast-parser/download/@webassemblyjs/wast-parser-1.9.1.tgz#e25ef13585c060073c1db0d6bd94340fdeee7596"
   integrity sha1-4l7xNYXAYAc8HbDWvZQ0D97udZY=
   dependencies:
     "@webassemblyjs/ast" "1.9.1"
@@ -176,7 +176,7 @@
 
 "@webassemblyjs/wast-printer@1.9.1":
   version "1.9.1"
-  resolved "http://registry.npm.sdp.nd/@webassemblyjs/wast-printer/download/@webassemblyjs/wast-printer-1.9.1.tgz#b9f38e93652037d4f3f9c91584635af4191ed7c1"
+  resolved "http://registry.yarnpkg.com/@webassemblyjs/wast-printer/download/@webassemblyjs/wast-printer-1.9.1.tgz#b9f38e93652037d4f3f9c91584635af4191ed7c1"
   integrity sha1-ufOOk2UgN9Tz+ckVhGNa9Bke18E=
   dependencies:
     "@webassemblyjs/ast" "1.9.1"
@@ -185,12 +185,12 @@
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
-  resolved "http://registry.npm.sdp.nd/@xtuc/ieee754/download/@xtuc/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
+  resolved "http://registry.yarnpkg.com/@xtuc/ieee754/download/@xtuc/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
   integrity sha1-7vAUoxRa5Hehy8AM0eVSM23Ot5A=
 
 "@xtuc/long@4.2.2":
   version "4.2.2"
-  resolved "http://registry.npm.sdp.nd/@xtuc/long/download/@xtuc/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
+  resolved "http://registry.yarnpkg.com/@xtuc/long/download/@xtuc/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha1-0pHGpOl5ibXGHZrPOWrk/hM6cY0=
 
 abab@^1.0.4:
@@ -223,7 +223,7 @@ acorn@^5.0.0, acorn@^5.5.0, acorn@^5.5.3:
 
 acorn@^8.0.4:
   version "8.0.4"
-  resolved "http://registry.npm.sdp.nd/acorn/download/acorn-8.0.4.tgz#7a3ae4191466a6984eee0fe3407a4f3aa9db8354"
+  resolved "http://registry.yarnpkg.com/acorn/download/acorn-8.0.4.tgz#7a3ae4191466a6984eee0fe3407a4f3aa9db8354"
   integrity sha1-ejrkGRRmpphO7g/jQHpPOqnbg1Q=
 
 ajv-keywords@^2.1.0:
@@ -232,7 +232,7 @@ ajv-keywords@^2.1.0:
 
 ajv-keywords@^3.5.2:
   version "3.5.2"
-  resolved "http://registry.npm.sdp.nd/ajv-keywords/download/ajv-keywords-3.5.2.tgz#31f29da5ab6e00d1c2d329acf7b5929614d5014d"
+  resolved "http://registry.yarnpkg.com/ajv-keywords/download/ajv-keywords-3.5.2.tgz#31f29da5ab6e00d1c2d329acf7b5929614d5014d"
   integrity sha1-MfKdpatuANHC0yms97WSlhTVAU0=
 
 ajv@^5.1.0, ajv@^5.2.3, ajv@^5.3.0:
@@ -246,7 +246,7 @@ ajv@^5.1.0, ajv@^5.2.3, ajv@^5.3.0:
 
 ajv@^6.12.5:
   version "6.12.6"
-  resolved "http://registry.npm.sdp.nd/ajv/download/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
+  resolved "http://registry.yarnpkg.com/ajv/download/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha1-uvWmLoArB9l3A0WG+MO69a3ybfQ=
   dependencies:
     fast-deep-equal "^3.1.1"
@@ -471,12 +471,12 @@ bcrypt-pbkdf@^1.0.0:
 
 big.js@^5.2.2:
   version "5.2.2"
-  resolved "http://registry.npm.sdp.nd/big.js/download/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
+  resolved "http://registry.yarnpkg.com/big.js/download/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha1-ZfCvOC9Xi83HQr2cKB6cstd2gyg=
 
 boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
-  resolved "http://registry.npm.sdp.nd/boolbase/download/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
+  resolved "http://registry.yarnpkg.com/boolbase/download/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
 brace-expansion@^1.1.7:
@@ -507,7 +507,7 @@ browser-process-hrtime@^0.1.2:
 
 browserslist@^4.14.5:
   version "4.16.1"
-  resolved "http://registry.npm.sdp.nd/browserslist/download/browserslist-4.16.1.tgz#bf757a2da376b3447b800a16f0f1c96358138766"
+  resolved "http://registry.yarnpkg.com/browserslist/download/browserslist-4.16.1.tgz#bf757a2da376b3447b800a16f0f1c96358138766"
   integrity sha1-v3V6LaN2s0R7gAoW8PHJY1gTh2Y=
   dependencies:
     caniuse-lite "^1.0.30001173"
@@ -558,7 +558,7 @@ callsites@^0.2.0:
 
 camel-case@^4.1.1:
   version "4.1.2"
-  resolved "http://registry.npm.sdp.nd/camel-case/download/camel-case-4.1.2.tgz#9728072a954f805228225a6deea6b38461e1bd5a"
+  resolved "http://registry.yarnpkg.com/camel-case/download/camel-case-4.1.2.tgz#9728072a954f805228225a6deea6b38461e1bd5a"
   integrity sha1-lygHKpVPgFIoIlpt7qazhGHhvVo=
   dependencies:
     pascal-case "^3.1.2"
@@ -574,7 +574,7 @@ camelcase@^4.1.0:
 
 caniuse-lite@^1.0.30001173:
   version "1.0.30001173"
-  resolved "http://registry.npm.sdp.nd/caniuse-lite/download/caniuse-lite-1.0.30001173.tgz#3c47bbe3cd6d7a9eda7f50ac016d158005569f56"
+  resolved "http://registry.yarnpkg.com/caniuse-lite/download/caniuse-lite-1.0.30001173.tgz#3c47bbe3cd6d7a9eda7f50ac016d158005569f56"
   integrity sha1-PEe7481tep7af1CsAW0VgAVWn1Y=
 
 caseless@~0.12.0:
@@ -612,7 +612,7 @@ chardet@^0.4.0:
 
 chrome-trace-event@^1.0.2:
   version "1.0.2"
-  resolved "http://registry.npm.sdp.nd/chrome-trace-event/download/chrome-trace-event-1.0.2.tgz#234090ee97c7d4ad1a2c4beae27505deffc608a4"
+  resolved "http://registry.yarnpkg.com/chrome-trace-event/download/chrome-trace-event-1.0.2.tgz#234090ee97c7d4ad1a2c4beae27505deffc608a4"
   integrity sha1-I0CQ7pfH1K0aLEvq4nUF3v/GCKQ=
   dependencies:
     tslib "^1.9.0"
@@ -632,7 +632,7 @@ class-utils@^0.3.5:
 
 clean-css@^4.2.3:
   version "4.2.3"
-  resolved "http://registry.npm.sdp.nd/clean-css/download/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
+  resolved "http://registry.yarnpkg.com/clean-css/download/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
   integrity sha1-UHtd59l7SO5T2ErbAWD/YhY4D3g=
   dependencies:
     source-map "~0.6.0"
@@ -690,7 +690,7 @@ color-name@1.1.1:
 
 colorette@^1.2.1:
   version "1.2.1"
-  resolved "http://registry.npm.sdp.nd/colorette/download/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
+  resolved "http://registry.yarnpkg.com/colorette/download/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
   integrity sha1-TQuSEyXBT6+SYzCGpTbbbolWSxs=
 
 combined-stream@1.0.6, combined-stream@~1.0.5:
@@ -701,12 +701,12 @@ combined-stream@1.0.6, combined-stream@~1.0.5:
 
 commander@^2.20.0:
   version "2.20.3"
-  resolved "http://registry.npm.sdp.nd/commander/download/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
+  resolved "http://registry.yarnpkg.com/commander/download/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha1-/UhehMA+tIgcIHIrpIA16FMa6zM=
 
 commander@^4.1.1:
   version "4.1.1"
-  resolved "http://registry.npm.sdp.nd/commander/download/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
+  resolved "http://registry.yarnpkg.com/commander/download/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha1-n9YCvZNilOnp70aj9NaWQESxgGg=
 
 commondir@^1.0.1:
@@ -763,7 +763,7 @@ cross-spawn@^5.0.1, cross-spawn@^5.1.0:
 
 css-select@^2.0.2:
   version "2.1.0"
-  resolved "http://registry.npm.sdp.nd/css-select/download/css-select-2.1.0.tgz#6a34653356635934a81baca68d0255432105dbef"
+  resolved "http://registry.yarnpkg.com/css-select/download/css-select-2.1.0.tgz#6a34653356635934a81baca68d0255432105dbef"
   integrity sha1-ajRlM1ZjWTSoG6ymjQJVQyEF2+8=
   dependencies:
     boolbase "^1.0.0"
@@ -773,7 +773,7 @@ css-select@^2.0.2:
 
 css-what@^3.2.1:
   version "3.4.2"
-  resolved "http://registry.npm.sdp.nd/css-what/download/css-what-3.4.2.tgz#ea7026fcb01777edbde52124e21f327e7ae950e4"
+  resolved "http://registry.yarnpkg.com/css-what/download/css-what-3.4.2.tgz#ea7026fcb01777edbde52124e21f327e7ae950e4"
   integrity sha1-6nAm/LAXd+295SEk4h8yfnrpUOQ=
 
 cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
@@ -929,7 +929,7 @@ domutils@^1.5.1, domutils@^1.7.0:
 
 dot-case@^3.0.4:
   version "3.0.4"
-  resolved "http://registry.npm.sdp.nd/dot-case/download/dot-case-3.0.4.tgz#9b2b670d00a431667a8a75ba29cd1b98809ce751"
+  resolved "http://registry.yarnpkg.com/dot-case/download/dot-case-3.0.4.tgz#9b2b670d00a431667a8a75ba29cd1b98809ce751"
   integrity sha1-mytnDQCkMWZ6inW6Kc0bmICc51E=
   dependencies:
     no-case "^3.0.4"
@@ -944,17 +944,17 @@ ecc-jsbn@~0.1.1:
 
 electron-to-chromium@^1.3.634:
   version "1.3.634"
-  resolved "http://registry.npm.sdp.nd/electron-to-chromium/download/electron-to-chromium-1.3.634.tgz#82ea400f520f739c4f6ff00c1f7524827a917d25"
+  resolved "http://registry.yarnpkg.com/electron-to-chromium/download/electron-to-chromium-1.3.634.tgz#82ea400f520f739c4f6ff00c1f7524827a917d25"
   integrity sha1-gupAD1IPc5xPb/AMH3UkgnqRfSU=
 
 emojis-list@^3.0.0:
   version "3.0.0"
-  resolved "http://registry.npm.sdp.nd/emojis-list/download/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
+  resolved "http://registry.yarnpkg.com/emojis-list/download/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
   integrity sha1-VXBmIEatKeLpFucariYKvf9Pang=
 
 enhanced-resolve@^5.3.1:
   version "5.4.1"
-  resolved "http://registry.npm.sdp.nd/enhanced-resolve/download/enhanced-resolve-5.4.1.tgz#c89b0c34f17f931902ef2913a125d4b825b49b6f"
+  resolved "http://registry.yarnpkg.com/enhanced-resolve/download/enhanced-resolve-5.4.1.tgz#c89b0c34f17f931902ef2913a125d4b825b49b6f"
   integrity sha1-yJsMNPF/kxkC7ykToSXUuCW0m28=
   dependencies:
     graceful-fs "^4.2.4"
@@ -978,7 +978,7 @@ error-ex@^1.2.0:
 
 escalade@^3.1.1:
   version "3.1.1"
-  resolved "http://registry.npm.sdp.nd/escalade/download/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
+  resolved "http://registry.yarnpkg.com/escalade/download/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
   integrity sha1-2M/ccACWXFoBdLSoLqpcBVJ0LkA=
 
 escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
@@ -1017,7 +1017,7 @@ eslint-scope@^3.7.1:
 
 eslint-scope@^5.1.1:
   version "5.1.1"
-  resolved "http://registry.npm.sdp.nd/eslint-scope/download/eslint-scope-5.1.1.tgz#e786e59a66cb92b3f6c1fb0d508aab174848f48c"
+  resolved "http://registry.yarnpkg.com/eslint-scope/download/eslint-scope-5.1.1.tgz#e786e59a66cb92b3f6c1fb0d508aab174848f48c"
   integrity sha1-54blmmbLkrP2wfsNUIqrF0hI9Iw=
   dependencies:
     esrecurse "^4.3.0"
@@ -1099,7 +1099,7 @@ esrecurse@^4.1.0:
 
 esrecurse@^4.3.0:
   version "4.3.0"
-  resolved "http://registry.npm.sdp.nd/esrecurse/download/esrecurse-4.3.0.tgz#7ad7964d679abb28bee72cec63758b1c5d2c9921"
+  resolved "http://registry.yarnpkg.com/esrecurse/download/esrecurse-4.3.0.tgz#7ad7964d679abb28bee72cec63758b1c5d2c9921"
   integrity sha1-eteWTWeauyi+5yzsY3WLHF0smSE=
   dependencies:
     estraverse "^5.2.0"
@@ -1110,7 +1110,7 @@ estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
 
 estraverse@^5.2.0:
   version "5.2.0"
-  resolved "http://registry.npm.sdp.nd/estraverse/download/estraverse-5.2.0.tgz#307df42547e6cc7324d3cf03c155d5cdb8c53880"
+  resolved "http://registry.yarnpkg.com/estraverse/download/estraverse-5.2.0.tgz#307df42547e6cc7324d3cf03c155d5cdb8c53880"
   integrity sha1-MH30JUfmzHMk088DwVXVzbjFOIA=
 
 esutils@^2.0.2:
@@ -1119,7 +1119,7 @@ esutils@^2.0.2:
 
 events@^3.2.0:
   version "3.2.0"
-  resolved "http://registry.npm.sdp.nd/events/download/events-3.2.0.tgz#93b87c18f8efcd4202a461aec4dfc0556b639379"
+  resolved "http://registry.yarnpkg.com/events/download/events-3.2.0.tgz#93b87c18f8efcd4202a461aec4dfc0556b639379"
   integrity sha1-k7h8GPjvzUICpGGuxN/AVWtjk3k=
 
 execa@^0.7.0:
@@ -1198,7 +1198,7 @@ fast-deep-equal@^1.0.0:
 
 fast-deep-equal@^3.1.1:
   version "3.1.3"
-  resolved "http://registry.npm.sdp.nd/fast-deep-equal/download/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
+  resolved "http://registry.yarnpkg.com/fast-deep-equal/download/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha1-On1WtVnWy8PrUSMlJE5hmmXGxSU=
 
 fast-json-stable-stringify@^2.0.0:
@@ -1254,7 +1254,7 @@ find-up@^2.1.0:
 
 find-up@^5.0.0:
   version "5.0.0"
-  resolved "http://registry.npm.sdp.nd/find-up/download/find-up-5.0.0.tgz#4c92819ecb7083561e4f4a240a86be5198f536fc"
+  resolved "http://registry.yarnpkg.com/find-up/download/find-up-5.0.0.tgz#4c92819ecb7083561e4f4a240a86be5198f536fc"
   integrity sha1-TJKBnstwg1YeT0okCoa+UZj1Nvw=
   dependencies:
     locate-path "^6.0.0"
@@ -1326,7 +1326,7 @@ getpass@^0.1.1:
 
 glob-to-regexp@^0.4.1:
   version "0.4.1"
-  resolved "http://registry.npm.sdp.nd/glob-to-regexp/download/glob-to-regexp-0.4.1.tgz#c75297087c851b9a578bd217dd59a92f59fe546e"
+  resolved "http://registry.yarnpkg.com/glob-to-regexp/download/glob-to-regexp-0.4.1.tgz#c75297087c851b9a578bd217dd59a92f59fe546e"
   integrity sha1-x1KXCHyFG5pXi9IX3VmpL1n+VG4=
 
 glob@^7.0.3, glob@^7.0.5, glob@^7.0.6, glob@^7.1.2:
@@ -1365,7 +1365,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2:
 
 graceful-fs@^4.2.4:
   version "4.2.4"
-  resolved "http://registry.npm.sdp.nd/graceful-fs/download/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
+  resolved "http://registry.yarnpkg.com/graceful-fs/download/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha1-Ila94U02MpWMRl68ltxGfKB6Kfs=
 
 handlebars@^4.0.11:
@@ -1405,7 +1405,7 @@ has-flag@^3.0.0:
 
 has-flag@^4.0.0:
   version "4.0.0"
-  resolved "http://registry.npm.sdp.nd/has-flag/download/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
+  resolved "http://registry.yarnpkg.com/has-flag/download/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha1-lEdx/ZyByBJlxNaUGGDaBrtZR5s=
 
 has-value@^0.3.1:
@@ -1437,7 +1437,7 @@ has-values@^1.0.0:
 
 he@^1.2.0:
   version "1.2.0"
-  resolved "http://registry.npm.sdp.nd/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
+  resolved "http://registry.yarnpkg.com/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
 hosted-git-info@^2.1.4:
@@ -1452,7 +1452,7 @@ html-encoding-sniffer@^1.0.2:
 
 html-minifier-terser@^5.0.1:
   version "5.1.1"
-  resolved "http://registry.npm.sdp.nd/html-minifier-terser/download/html-minifier-terser-5.1.1.tgz#922e96f1f3bb60832c2634b79884096389b1f054"
+  resolved "http://registry.yarnpkg.com/html-minifier-terser/download/html-minifier-terser-5.1.1.tgz#922e96f1f3bb60832c2634b79884096389b1f054"
   integrity sha1-ki6W8fO7YIMsJjS3mIQJY4mx8FQ=
   dependencies:
     camel-case "^4.1.1"
@@ -1465,7 +1465,7 @@ html-minifier-terser@^5.0.1:
 
 html-webpack-plugin@^5.0.0-beta.4:
   version "5.0.0-beta.4"
-  resolved "http://registry.npm.sdp.nd/html-webpack-plugin/download/html-webpack-plugin-5.0.0-beta.4.tgz#b07f76a546f7423fe057af7dce3fa983f774f581"
+  resolved "http://registry.yarnpkg.com/html-webpack-plugin/download/html-webpack-plugin-5.0.0-beta.4.tgz#b07f76a546f7423fe057af7dce3fa983f774f581"
   integrity sha1-sH92pUb3Qj/gV699zj+pg/d09YE=
   dependencies:
     "@types/html-minifier-terser" "^5.0.0"
@@ -1477,7 +1477,7 @@ html-webpack-plugin@^5.0.0-beta.4:
 
 htmlparser2@^3.10.1:
   version "3.10.1"
-  resolved "http://registry.npm.sdp.nd/htmlparser2/download/htmlparser2-3.10.1.tgz#bd679dc3f59897b6a34bb10749c855bb53a9392f"
+  resolved "http://registry.yarnpkg.com/htmlparser2/download/htmlparser2-3.10.1.tgz#bd679dc3f59897b6a34bb10749c855bb53a9392f"
   integrity sha1-vWedw/WYl7ajS7EHSchVu1OpOS8=
   dependencies:
     domelementtype "^1.3.1"
@@ -1778,7 +1778,7 @@ jasmine@^3.1.0:
 
 jest-worker@^26.6.1:
   version "26.6.2"
-  resolved "http://registry.npm.sdp.nd/jest-worker/download/jest-worker-26.6.2.tgz#7f72cbc4d643c365e27b9fd775f9d0eaa9c7a8ed"
+  resolved "http://registry.yarnpkg.com/jest-worker/download/jest-worker-26.6.2.tgz#7f72cbc4d643c365e27b9fd775f9d0eaa9c7a8ed"
   integrity sha1-f3LLxNZDw2Xie5/XdfnQ6qnHqO0=
   dependencies:
     "@types/node" "*"
@@ -1865,7 +1865,7 @@ json-stringify-safe@~5.0.1:
 
 json5@^2.1.2:
   version "2.1.3"
-  resolved "http://registry.npm.sdp.nd/json5/download/json5-2.1.3.tgz#c9b0f7fa9233bfe5807fe66fcf3a5617ed597d43"
+  resolved "http://registry.yarnpkg.com/json5/download/json5-2.1.3.tgz#c9b0f7fa9233bfe5807fe66fcf3a5617ed597d43"
   integrity sha1-ybD3+pIzv+WAf+ZvzzpWF+1ZfUM=
   dependencies:
     minimist "^1.2.5"
@@ -1932,12 +1932,12 @@ load-json-file@^1.0.0:
 
 loader-runner@^4.1.0:
   version "4.1.0"
-  resolved "http://registry.npm.sdp.nd/loader-runner/download/loader-runner-4.1.0.tgz#f70bc0c29edbabdf2043e7ee73ccc3fe1c96b42d"
+  resolved "http://registry.yarnpkg.com/loader-runner/download/loader-runner-4.1.0.tgz#f70bc0c29edbabdf2043e7ee73ccc3fe1c96b42d"
   integrity sha1-9wvAwp7bq98gQ+fuc8zD/hyWtC0=
 
 loader-utils@^2.0.0:
   version "2.0.0"
-  resolved "http://registry.npm.sdp.nd/loader-utils/download/loader-utils-2.0.0.tgz#e4cace5b816d425a166b5f097e10cd12b36064b0"
+  resolved "http://registry.yarnpkg.com/loader-utils/download/loader-utils-2.0.0.tgz#e4cace5b816d425a166b5f097e10cd12b36064b0"
   integrity sha1-5MrOW4FtQloWa18JfhDNErNgZLA=
   dependencies:
     big.js "^5.2.2"
@@ -1953,7 +1953,7 @@ locate-path@^2.0.0:
 
 locate-path@^6.0.0:
   version "6.0.0"
-  resolved "http://registry.npm.sdp.nd/locate-path/download/locate-path-6.0.0.tgz#55321eb309febbc59c4801d931a72452a681d286"
+  resolved "http://registry.yarnpkg.com/locate-path/download/locate-path-6.0.0.tgz#55321eb309febbc59c4801d931a72452a681d286"
   integrity sha1-VTIeswn+u8WcSAHZMackUqaB0oY=
   dependencies:
     p-locate "^5.0.0"
@@ -1968,7 +1968,7 @@ lodash@^4.13.1, lodash@^4.17.4, lodash@^4.3.0:
 
 lodash@^4.17.20:
   version "4.17.20"
-  resolved "http://registry.npm.sdp.nd/lodash/download/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  resolved "http://registry.yarnpkg.com/lodash/download/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha1-tEqbYpe8tpjxxRo1RaKzs2jVnFI=
 
 longest@^1.0.1:
@@ -1983,7 +1983,7 @@ loose-envify@^1.0.0:
 
 lower-case@^2.0.2:
   version "2.0.2"
-  resolved "http://registry.npm.sdp.nd/lower-case/download/lower-case-2.0.2.tgz#6fa237c63dbdc4a82ca0fd882e4722dc5e634e28"
+  resolved "http://registry.yarnpkg.com/lower-case/download/lower-case-2.0.2.tgz#6fa237c63dbdc4a82ca0fd882e4722dc5e634e28"
   integrity sha1-b6I3xj29xKgsoP2ILkci3F5jTig=
   dependencies:
     tslib "^2.0.3"
@@ -2036,7 +2036,7 @@ merge-source-map@^1.1.0:
 
 merge-stream@^2.0.0:
   version "2.0.0"
-  resolved "http://registry.npm.sdp.nd/merge-stream/download/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
+  resolved "http://registry.yarnpkg.com/merge-stream/download/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
   integrity sha1-UoI2KaFN0AyXcPtq1H3GMQ8sH2A=
 
 micromatch@^3.1.10, micromatch@^3.1.8:
@@ -2059,7 +2059,7 @@ micromatch@^3.1.10, micromatch@^3.1.8:
 
 mime-db@1.45.0:
   version "1.45.0"
-  resolved "http://registry.npm.sdp.nd/mime-db/download/mime-db-1.45.0.tgz#cceeda21ccd7c3a745eba2decd55d4b73e7879ea"
+  resolved "http://registry.yarnpkg.com/mime-db/download/mime-db-1.45.0.tgz#cceeda21ccd7c3a745eba2decd55d4b73e7879ea"
   integrity sha1-zO7aIczXw6dF66LezVXUtz54eeo=
 
 mime-db@~1.35.0:
@@ -2074,7 +2074,7 @@ mime-types@^2.1.12, mime-types@~2.1.17:
 
 mime-types@^2.1.27:
   version "2.1.28"
-  resolved "http://registry.npm.sdp.nd/mime-types/download/mime-types-2.1.28.tgz#1160c4757eab2c5363888e005273ecf79d2a0ecd"
+  resolved "http://registry.yarnpkg.com/mime-types/download/mime-types-2.1.28.tgz#1160c4757eab2c5363888e005273ecf79d2a0ecd"
   integrity sha1-EWDEdX6rLFNjiI4AUnPs950qDs0=
   dependencies:
     mime-db "1.45.0"
@@ -2095,7 +2095,7 @@ minimist@0.0.8:
 
 minimist@^1.2.5:
   version "1.2.5"
-  resolved "http://registry.npm.sdp.nd/minimist/download/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  resolved "http://registry.yarnpkg.com/minimist/download/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
 
 minimist@~0.0.1:
@@ -2145,12 +2145,12 @@ natural-compare@^1.4.0:
 
 neo-async@^2.6.2:
   version "2.6.2"
-  resolved "http://registry.npm.sdp.nd/neo-async/download/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
+  resolved "http://registry.yarnpkg.com/neo-async/download/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha1-tKr7k+OustgXTKU88WOrfXMIMF8=
 
 no-case@^3.0.4:
   version "3.0.4"
-  resolved "http://registry.npm.sdp.nd/no-case/download/no-case-3.0.4.tgz#d361fd5c9800f558551a8369fc0dcd4662b6124d"
+  resolved "http://registry.yarnpkg.com/no-case/download/no-case-3.0.4.tgz#d361fd5c9800f558551a8369fc0dcd4662b6124d"
   integrity sha1-02H9XJgA9VhVGoNp/A3NRmK2Ek0=
   dependencies:
     lower-case "^2.0.2"
@@ -2158,7 +2158,7 @@ no-case@^3.0.4:
 
 node-releases@^1.1.69:
   version "1.1.69"
-  resolved "http://registry.npm.sdp.nd/node-releases/download/node-releases-1.1.69.tgz#3149dbde53b781610cd8b486d62d86e26c3725f6"
+  resolved "http://registry.yarnpkg.com/node-releases/download/node-releases-1.1.69.tgz#3149dbde53b781610cd8b486d62d86e26c3725f6"
   integrity sha1-MUnb3lO3gWEM2LSG1i2G4mw3JfY=
 
 normalize-package-data@^2.3.2:
@@ -2178,7 +2178,7 @@ npm-run-path@^2.0.0:
 
 nth-check@^1.0.2:
   version "1.0.2"
-  resolved "http://registry.npm.sdp.nd/nth-check/download/nth-check-1.0.2.tgz#b2bd295c37e3dd58a3bf0700376663ba4d9cf05c"
+  resolved "http://registry.yarnpkg.com/nth-check/download/nth-check-1.0.2.tgz#b2bd295c37e3dd58a3bf0700376663ba4d9cf05c"
   integrity sha1-sr0pXDfj3VijvwcAN2Zjuk2c8Fw=
   dependencies:
     boolbase "~1.0.0"
@@ -2309,7 +2309,7 @@ p-limit@^1.1.0:
 
 p-limit@^3.0.2:
   version "3.1.0"
-  resolved "http://registry.npm.sdp.nd/p-limit/download/p-limit-3.1.0.tgz#e1daccbe78d0d1388ca18c64fea38e3e57e3706b"
+  resolved "http://registry.yarnpkg.com/p-limit/download/p-limit-3.1.0.tgz#e1daccbe78d0d1388ca18c64fea38e3e57e3706b"
   integrity sha1-4drMvnjQ0TiMoYxk/qOOPlfjcGs=
   dependencies:
     yocto-queue "^0.1.0"
@@ -2322,7 +2322,7 @@ p-locate@^2.0.0:
 
 p-locate@^5.0.0:
   version "5.0.0"
-  resolved "http://registry.npm.sdp.nd/p-locate/download/p-locate-5.0.0.tgz#83c8315c6785005e3bd021839411c9e110e6d834"
+  resolved "http://registry.yarnpkg.com/p-locate/download/p-locate-5.0.0.tgz#83c8315c6785005e3bd021839411c9e110e6d834"
   integrity sha1-g8gxXGeFAF470CGDlBHJ4RDm2DQ=
   dependencies:
     p-limit "^3.0.2"
@@ -2333,7 +2333,7 @@ p-try@^1.0.0:
 
 param-case@^3.0.3:
   version "3.0.4"
-  resolved "http://registry.npm.sdp.nd/param-case/download/param-case-3.0.4.tgz#7d17fe4aa12bde34d4a77d91acfb6219caad01c5"
+  resolved "http://registry.yarnpkg.com/param-case/download/param-case-3.0.4.tgz#7d17fe4aa12bde34d4a77d91acfb6219caad01c5"
   integrity sha1-fRf+SqEr3jTUp32RrPtiGcqtAcU=
   dependencies:
     dot-case "^3.0.4"
@@ -2351,7 +2351,7 @@ parse5@4.0.0:
 
 pascal-case@^3.1.2:
   version "3.1.2"
-  resolved "http://registry.npm.sdp.nd/pascal-case/download/pascal-case-3.1.2.tgz#b48e0ef2b98e205e7c1dae747d0b1508237660eb"
+  resolved "http://registry.yarnpkg.com/pascal-case/download/pascal-case-3.1.2.tgz#b48e0ef2b98e205e7c1dae747d0b1508237660eb"
   integrity sha1-tI4O8rmOIF58Ha50fQsVCCN2YOs=
   dependencies:
     no-case "^3.0.4"
@@ -2373,7 +2373,7 @@ path-exists@^3.0.0:
 
 path-exists@^4.0.0:
   version "4.0.0"
-  resolved "http://registry.npm.sdp.nd/path-exists/download/path-exists-4.0.0.tgz#513bdbe2d3b95d7762e8c1137efa195c6c61b5b3"
+  resolved "http://registry.yarnpkg.com/path-exists/download/path-exists-4.0.0.tgz#513bdbe2d3b95d7762e8c1137efa195c6c61b5b3"
   integrity sha1-UTvb4tO5XXdi6METfvoZXGxhtbM=
 
 path-is-absolute@^1.0.0:
@@ -2426,7 +2426,7 @@ pkg-dir@^1.0.0:
 
 pkg-dir@^5.0.0:
   version "5.0.0"
-  resolved "http://registry.npm.sdp.nd/pkg-dir/download/pkg-dir-5.0.0.tgz#a02d6aebe6ba133a928f74aec20bafdfe6b8e760"
+  resolved "http://registry.yarnpkg.com/pkg-dir/download/pkg-dir-5.0.0.tgz#a02d6aebe6ba133a928f74aec20bafdfe6b8e760"
   integrity sha1-oC1q6+a6EzqSj3Suwguv3+a452A=
   dependencies:
     find-up "^5.0.0"
@@ -2449,7 +2449,7 @@ prelude-ls@~1.1.2:
 
 pretty-error@^2.1.1:
   version "2.1.2"
-  resolved "http://registry.npm.sdp.nd/pretty-error/download/pretty-error-2.1.2.tgz#be89f82d81b1c86ec8fdfbc385045882727f93b6"
+  resolved "http://registry.yarnpkg.com/pretty-error/download/pretty-error-2.1.2.tgz#be89f82d81b1c86ec8fdfbc385045882727f93b6"
   integrity sha1-von4LYGxyG7I/fvDhQRYgnJ/k7Y=
   dependencies:
     lodash "^4.17.20"
@@ -2489,7 +2489,7 @@ qs@~6.5.1:
 
 randombytes@^2.1.0:
   version "2.1.0"
-  resolved "http://registry.npm.sdp.nd/randombytes/download/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
+  resolved "http://registry.yarnpkg.com/randombytes/download/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
   integrity sha1-32+ENy8CcNxlzfYpE0mrekc9Tyo=
   dependencies:
     safe-buffer "^5.1.0"
@@ -2547,12 +2547,12 @@ regexpp@^1.0.1:
 
 relateurl@^0.2.7:
   version "0.2.7"
-  resolved "http://registry.npm.sdp.nd/relateurl/download/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
+  resolved "http://registry.yarnpkg.com/relateurl/download/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
 
 renderkid@^2.0.4:
   version "2.0.5"
-  resolved "http://registry.npm.sdp.nd/renderkid/download/renderkid-2.0.5.tgz#483b1ac59c6601ab30a7a596a5965cabccfdd0a5"
+  resolved "http://registry.yarnpkg.com/renderkid/download/renderkid-2.0.5.tgz#483b1ac59c6601ab30a7a596a5965cabccfdd0a5"
   integrity sha1-SDsaxZxmAaswp6WWpZZcq8z90KU=
   dependencies:
     css-select "^2.0.2"
@@ -2700,7 +2700,7 @@ sax@^1.2.4:
 
 schema-utils@^3.0.0:
   version "3.0.0"
-  resolved "http://registry.npm.sdp.nd/schema-utils/download/schema-utils-3.0.0.tgz#67502f6aa2b66a2d4032b4279a2944978a0913ef"
+  resolved "http://registry.yarnpkg.com/schema-utils/download/schema-utils-3.0.0.tgz#67502f6aa2b66a2d4032b4279a2944978a0913ef"
   integrity sha1-Z1AvaqK2ai1AMrQnmilEl4oJE+8=
   dependencies:
     "@types/json-schema" "^7.0.6"
@@ -2713,7 +2713,7 @@ schema-utils@^3.0.0:
 
 serialize-javascript@^5.0.1:
   version "5.0.1"
-  resolved "http://registry.npm.sdp.nd/serialize-javascript/download/serialize-javascript-5.0.1.tgz#7886ec848049a462467a97d3d918ebb2aaf934f4"
+  resolved "http://registry.yarnpkg.com/serialize-javascript/download/serialize-javascript-5.0.1.tgz#7886ec848049a462467a97d3d918ebb2aaf934f4"
   integrity sha1-eIbshIBJpGJGepfT2Rjrsqr5NPQ=
   dependencies:
     randombytes "^2.1.0"
@@ -2793,7 +2793,7 @@ snapdragon@^0.8.1:
 
 source-list-map@^2.0.1:
   version "2.0.1"
-  resolved "http://registry.npm.sdp.nd/source-list-map/download/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
+  resolved "http://registry.yarnpkg.com/source-list-map/download/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
   integrity sha1-OZO9hzv8SEecyp6jpUeDXHwVSzQ=
 
 source-map-resolve@^0.5.0:
@@ -2808,7 +2808,7 @@ source-map-resolve@^0.5.0:
 
 source-map-support@~0.5.12, source-map-support@~0.5.19:
   version "0.5.19"
-  resolved "http://registry.npm.sdp.nd/source-map-support/download/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
+  resolved "http://registry.yarnpkg.com/source-map-support/download/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
   integrity sha1-qYti+G3K9PZzmWSMCFKRq56P7WE=
   dependencies:
     buffer-from "^1.0.0"
@@ -2834,7 +2834,7 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
 
 source-map@~0.7.2:
   version "0.7.3"
-  resolved "http://registry.npm.sdp.nd/source-map/download/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
+  resolved "http://registry.yarnpkg.com/source-map/download/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha1-UwL4FpAxc1ImVECS5kmB91F1A4M=
 
 spawn-wrap@^1.4.2:
@@ -2978,7 +2978,7 @@ supports-color@^5.3.0:
 
 supports-color@^7.0.0:
   version "7.2.0"
-  resolved "http://registry.npm.sdp.nd/supports-color/download/supports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
+  resolved "http://registry.yarnpkg.com/supports-color/download/supports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
   integrity sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=
   dependencies:
     has-flag "^4.0.0"
@@ -3000,12 +3000,12 @@ table@4.0.2:
 
 tapable@^2.0.0, tapable@^2.1.1, tapable@^2.2.0:
   version "2.2.0"
-  resolved "http://registry.npm.sdp.nd/tapable/download/tapable-2.2.0.tgz#5c373d281d9c672848213d0e037d1c4165ab426b"
+  resolved "http://registry.yarnpkg.com/tapable/download/tapable-2.2.0.tgz#5c373d281d9c672848213d0e037d1c4165ab426b"
   integrity sha1-XDc9KB2cZyhIIT0OA30cQWWrQms=
 
 terser-webpack-plugin@^5.0.3:
   version "5.0.3"
-  resolved "http://registry.npm.sdp.nd/terser-webpack-plugin/download/terser-webpack-plugin-5.0.3.tgz#ec60542db2421f45735c719d2e17dabfbb2e3e42"
+  resolved "http://registry.yarnpkg.com/terser-webpack-plugin/download/terser-webpack-plugin-5.0.3.tgz#ec60542db2421f45735c719d2e17dabfbb2e3e42"
   integrity sha1-7GBULbJCH0VzXHGdLhfav7suPkI=
   dependencies:
     jest-worker "^26.6.1"
@@ -3017,7 +3017,7 @@ terser-webpack-plugin@^5.0.3:
 
 terser@^4.6.3:
   version "4.8.0"
-  resolved "http://registry.npm.sdp.nd/terser/download/terser-4.8.0.tgz#63056343d7c70bb29f3af665865a46fe03a0df17"
+  resolved "http://registry.yarnpkg.com/terser/download/terser-4.8.0.tgz#63056343d7c70bb29f3af665865a46fe03a0df17"
   integrity sha1-YwVjQ9fHC7KfOvZlhlpG/gOg3xc=
   dependencies:
     commander "^2.20.0"
@@ -3026,7 +3026,7 @@ terser@^4.6.3:
 
 terser@^5.3.8:
   version "5.5.1"
-  resolved "http://registry.npm.sdp.nd/terser/download/terser-5.5.1.tgz#540caa25139d6f496fdea056e414284886fb2289"
+  resolved "http://registry.yarnpkg.com/terser/download/terser-5.5.1.tgz#540caa25139d6f496fdea056e414284886fb2289"
   integrity sha1-VAyqJROdb0lv3qBW5BQoSIb7Iok=
   dependencies:
     commander "^2.20.0"
@@ -3112,7 +3112,7 @@ tslib@^1.9.0:
 
 tslib@^2.0.3:
   version "2.1.0"
-  resolved "http://registry.npm.sdp.nd/tslib/download/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
+  resolved "http://registry.yarnpkg.com/tslib/download/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha1-2mCGDxwuyqVwOrfTm8Bba/mIuXo=
 
 tunnel-agent@^0.6.0:
@@ -3166,7 +3166,7 @@ unset-value@^1.0.0:
 
 uri-js@^4.2.2:
   version "4.4.0"
-  resolved "http://registry.npm.sdp.nd/uri-js/download/uri-js-4.4.0.tgz#aa714261de793e8a82347a7bcc9ce74e86f28602"
+  resolved "http://registry.yarnpkg.com/uri-js/download/uri-js-4.4.0.tgz#aa714261de793e8a82347a7bcc9ce74e86f28602"
   integrity sha1-qnFCYd55PoqCNHp7zJznTobyhgI=
   dependencies:
     punycode "^2.1.0"
@@ -3215,7 +3215,7 @@ w3c-hr-time@^1.0.1:
 
 watchpack@^2.0.0:
   version "2.1.0"
-  resolved "http://registry.npm.sdp.nd/watchpack/download/watchpack-2.1.0.tgz#e63194736bf3aa22026f7b191cd57907b0f9f696"
+  resolved "http://registry.yarnpkg.com/watchpack/download/watchpack-2.1.0.tgz#e63194736bf3aa22026f7b191cd57907b0f9f696"
   integrity sha1-5jGUc2vzqiICb3sZHNV5B7D59pY=
   dependencies:
     glob-to-regexp "^0.4.1"
@@ -3227,7 +3227,7 @@ webidl-conversions@^4.0.2:
 
 webpack-sources@^2.1.1:
   version "2.2.0"
-  resolved "http://registry.npm.sdp.nd/webpack-sources/download/webpack-sources-2.2.0.tgz#058926f39e3d443193b6c31547229806ffd02bac"
+  resolved "http://registry.yarnpkg.com/webpack-sources/download/webpack-sources-2.2.0.tgz#058926f39e3d443193b6c31547229806ffd02bac"
   integrity sha1-BYkm8549RDGTtsMVRyKYBv/QK6w=
   dependencies:
     source-list-map "^2.0.1"
@@ -3235,7 +3235,7 @@ webpack-sources@^2.1.1:
 
 webpack@^5.4.0:
   version "5.11.1"
-  resolved "http://registry.npm.sdp.nd/webpack/download/webpack-5.11.1.tgz#39b2b9daeb5c6c620e03b7556ec674eaed4016b4"
+  resolved "http://registry.yarnpkg.com/webpack/download/webpack-5.11.1.tgz#39b2b9daeb5c6c620e03b7556ec674eaed4016b4"
   integrity sha1-ObK52utcbGIOA7dVbsZ06u1AFrQ=
   dependencies:
     "@types/eslint-scope" "^3.7.0"
@@ -3390,5 +3390,5 @@ yargs@~3.10.0:
 
 yocto-queue@^0.1.0:
   version "0.1.0"
-  resolved "http://registry.npm.sdp.nd/yocto-queue/download/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
+  resolved "http://registry.yarnpkg.com/yocto-queue/download/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
