@@ -14,11 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const testSpec = require('../spec')
+const PreloadPlugin = require('./src/index')
+const testSpec = require('../../spec')
 
-const descriptionPrefix = '[webpack 5]'
-testSpec({ webpack, HtmlWebpackPlugin, descriptionPrefix })
+const descriptionPrefix = '[webpack 4]'
+
+testSpec({
+  webpack,
+  HtmlWebpackPlugin,
+  PreloadPlugin,
+  descriptionPrefix
+})

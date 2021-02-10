@@ -2,6 +2,6 @@
 .nyc_output/
 build/
 node_modules/
-
+test/e2e/webpack4/src/
 # Files
 npm-debug.log

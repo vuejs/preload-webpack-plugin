@@ -19,11 +19,14 @@ const MemoryFileSystem = require('memory-fs')
 const path = require('path')
 const { JSDOM } = require('jsdom')
 
-const PreloadPlugin = require('../src/index')
-
 const OUTPUT_DIR = path.join(__dirname, 'dist')
 
-module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
+module.exports = ({
+  descriptionPrefix,
+  webpack,
+  HtmlWebpackPlugin,
+  PreloadPlugin
+}) => {
   describe(`${descriptionPrefix} When passed async chunks, it`, function () {
     it('should add preload tags', function (done) {
       const fs = new MemoryFileSystem()
