@@ -23,6 +23,7 @@ const extractChunks = require('./lib/extract-chunks')
 class PreloadPlugin {
   constructor (options) {
     this.options = Object.assign({}, defaultOptions, options)
+    this.webpackMajorVersion = 4
   }
 
   generateLinks (compilation, htmlPluginData) {
@@ -68,9 +69,12 @@ class PreloadPlugin {
 
     const links = []
     const webpackPublicPath = compilation.outputOptions.publicPath
+
     // webpack 5 set publicPath default value 'auto'
-    const isPublicPathDefined = webpackPublicPath.trim() !== '' && webpackPublicPath !== 'auto'
-    const publicPath = isPublicPathDefined ? webpackPublicPath : ''
+    const publicPath = this.webpackMajorVersion >= 5
+      ? webpackPublicPath.trim() !== '' && webpackPublicPath !== 'auto'
+        ? webpackPublicPath : ''
+      : webpackPublicPath || ''
     for (const file of sortedFilteredFiles) {
       const href = `${publicPath}${file}`
 
@@ -107,6 +111,11 @@ class PreloadPlugin {
   }
 
   apply (compiler) {
+    // for webpack5+, we can get webpack version from `compiler.webpack`
+    if (compiler.webpack) {
+      this.webpackMajorVersion = compiler.webpack.version.split('.')[0]
+    }
+
     const skip = data => {
       const htmlFilename = data.plugin.options.filename
       const exclude = this.options.excludeHtmlNames
