@@ -1,4 +1,4 @@
 build/
 demo/
 test/fixtures/
-test/*/node_modules/
+test/**/node_modules/

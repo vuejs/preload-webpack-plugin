@@ -19,13 +19,17 @@ const MemoryFileSystem = require('memory-fs')
 const path = require('path')
 const { JSDOM } = require('jsdom')
 
-const PreloadPlugin = require('../src/index')
-
 const OUTPUT_DIR = path.join(__dirname, 'dist')
 
-module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
+module.exports = ({
+  descriptionPrefix,
+  webpack,
+  HtmlWebpackPlugin,
+  PreloadPlugin
+}) => {
   describe(`${descriptionPrefix} When passed async chunks, it`, function () {
     it('should add preload tags', function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: {
           js: path.join(__dirname, 'fixtures', 'file.js')
@@ -45,7 +49,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -57,10 +61,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         done()
       })
 
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     it('should add prefetch tags', function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: {
           js: path.join(__dirname, 'fixtures', 'file.js')
@@ -82,7 +87,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -92,10 +97,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     it('should respect publicPath', function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: {
           js: path.join(__dirname, 'fixtures', 'file.js')
@@ -115,7 +121,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -125,12 +131,13 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
   })
 
   describe(`${descriptionPrefix} When passed non-async chunks, it`, function () {
     it('should add preload tags', function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: path.join(__dirname, 'fixtures', 'file.js'),
         output: {
@@ -152,7 +159,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -166,10 +173,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     it('should set as="style" for CSS, and as="script" otherwise', function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: {
           js: path.join(__dirname, 'fixtures', 'file.js')
@@ -192,7 +200,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -206,10 +214,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     it('should use the value for the as attribute passed in the configuration', (done) => {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: path.join(__dirname, 'fixtures', 'file.js'),
         output: {
@@ -231,7 +240,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -245,10 +254,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     it('should set as="font" and crossOrigin for .woff2 assets', (done) => {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: {
           js: path.join(__dirname, 'fixtures', 'file.js')
@@ -271,7 +281,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -286,10 +296,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     it('should allow setting the as value via a callback', function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: path.join(__dirname, 'fixtures', 'file.js'),
         output: {
@@ -311,7 +322,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -325,12 +336,13 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
   })
 
   describe(`${descriptionPrefix} When passed normal chunks, it`, function () {
     it('should add prefetch links', function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: path.join(__dirname, 'fixtures', 'file.js'),
         output: {
@@ -348,29 +360,27 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
         expect(links.length).toBe(2)
         expect(links[0].getAttribute('rel')).toBe('prefetch')
         expect(links[0].hasAttribute('as')).toBeFalsy()
-        // There's a difference in the output when run in webpack v3 and v4.
-        //   v3 has compilation.chunks[0].files: ['0.js']
-        //   v4 has compilation.chunks[0].files: ['home.js']
-        expect(['0.js', 'home.js']).toContain(links[0].getAttribute('href'))
+        expect(links[0].getAttribute('href')).toBe('home.js')
         expect(links[1].getAttribute('rel')).toBe('prefetch')
         expect(links[1].hasAttribute('as')).toBeFalsy()
         expect(links[1].getAttribute('href')).toBe('main.js')
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
   })
 
   describe(`${descriptionPrefix} When using 'include', it`, function () {
     it('should filter based on chunkname', function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: path.join(__dirname, 'fixtures', 'file.js'),
         output: {
@@ -392,7 +402,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -403,10 +413,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     it('should filter based on chunkname, including the sourcemap', function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: path.join(__dirname, 'fixtures', 'file.js'),
         devtool: 'cheap-source-map',
@@ -432,7 +443,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -446,12 +457,13 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     // TODO: Is this testing the right thing? We might need a test around, e.g.,
     // using a different plugin that adds assets without also creating chunks.
     it(`should pull in additional assets when set to 'allAssets'`, function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         // Use "the" as the prefix for the entry names, to ensure that they're
         // sorted after either 0.js or home.js (depending on the webpack version).
@@ -474,17 +486,15 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
+
         expect(links.length).toBe(3)
         expect(links[0].getAttribute('rel')).toBe('preload')
         expect(links[0].getAttribute('as')).toBe('script')
-        // There's a difference in the output when run in webpack v3 and v4.
-        //   v3 has compilation.chunks[0].files: ['0.js']
-        //   v4 has compilation.chunks[0].files: ['home.js']
-        expect(['0.js', 'home.js']).toContain(links[0].getAttribute('href'))
+        expect(links[0].getAttribute('href')).toBe('home.js')
         expect(links[1].getAttribute('rel')).toBe('preload')
         expect(links[1].getAttribute('as')).toBe('script')
         expect(links[1].getAttribute('href')).toBe('theFirstEntry.js')
@@ -494,10 +504,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     it(`should honor fileWhitelist and fileBlacklist, with the blacklist taking precedence`, function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         // Use "the" as the prefix for the entry names, to ensure that they're
         // sorted after either 0.js or home.js (depending on the webpack version).
@@ -522,10 +533,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
+
         expect(links.length).toBe(1)
         expect(links[0].getAttribute('rel')).toBe('preload')
         expect(links[0].getAttribute('as')).toBe('script')
@@ -533,11 +545,12 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
   })
 
   describe(`${descriptionPrefix} When using an empty config, it`, function () {
+    const fs = new MemoryFileSystem()
     it('should not preload .map files', function (done) {
       const compiler = webpack({
         entry: {
@@ -559,7 +572,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -570,11 +583,12 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
   })
 
   describe(`${descriptionPrefix} When excludeHtmlNames is used,`, function () {
+    const fs = new MemoryFileSystem()
     it(`should not modify the HTML of an asset that's listed`, function (done) {
       const compiler = webpack({
         entry: {
@@ -599,7 +613,7 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const html = result.compilation.assets['ignored.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'ignored.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -607,10 +621,11 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
     })
 
     it(`should not modify the HTML of an asset that's listed, but modify the HTML of the asset that isn't listed`, function (done) {
+      const fs = new MemoryFileSystem()
       const compiler = webpack({
         entry: {
           js: path.join(__dirname, 'fixtures', 'file.js')
@@ -635,13 +650,13 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
         expect(result.compilation.errors.length).toBe(0,
           result.compilation.errors.join('\n=========\n'))
 
-        const ignoredHtml = result.compilation.assets['ignored.html'].source()
+        const ignoredHtml = fs.readFileSync(path.join(OUTPUT_DIR, 'ignored.html'), 'utf-8')
         const ignoredDom = new JSDOM(ignoredHtml)
 
         const ignoredLinks = ignoredDom.window.document.head.querySelectorAll('link')
         expect(ignoredLinks.length).toBe(0)
 
-        const html = result.compilation.assets['index.html'].source()
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
         const dom = new JSDOM(html)
 
         const links = dom.window.document.head.querySelectorAll('link')
@@ -652,7 +667,43 @@ module.exports = ({ descriptionPrefix, webpack, HtmlWebpackPlugin }) => {
 
         done()
       })
-      compiler.outputFileSystem = new MemoryFileSystem()
+      compiler.outputFileSystem = fs
+    })
+  })
+
+  describe(`${descriptionPrefix} When html-webpack-plugin filtering Chunks, it`, function () {
+    it('should filter chunks', function (done) {
+      const fs = new MemoryFileSystem()
+      const compiler = webpack({
+        entry: {
+          theFirstEntry: path.join(__dirname, 'fixtures', 'file.js'),
+          theSecondEntry: path.join(__dirname, 'fixtures', 'vendor.js')
+        },
+        output: {
+          path: OUTPUT_DIR,
+          filename: '[name].js'
+        },
+        plugins: [
+          new HtmlWebpackPlugin({
+            chunks: ['theSecondEntry']
+          }),
+          new PreloadPlugin()
+        ]
+      }, function (err, result) {
+        expect(err).toBeFalsy(err)
+        expect(result.compilation.errors.length).toBe(0,
+          result.compilation.errors.join('\n=========\n'))
+
+        const html = fs.readFileSync(path.join(OUTPUT_DIR, 'index.html'), 'utf-8')
+        const dom = new JSDOM(html)
+
+        const links = dom.window.document.head.querySelectorAll('link')
+        expect(links.length).toBe(0)
+
+        done()
+      })
+
+      compiler.outputFileSystem = fs
     })
   })
 }

@@ -14,17 +14,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const EntryPoint = require('webpack/lib/Entrypoint')
 
-module.exports = function doesChunkBelongToHtml ({ chunk, htmlAssetsChunks, compilation }) {
-  // Get all the hashes of the HTML assets.
-  const rootHashes = Object.values(htmlAssetsChunks).map(({ hash }) => hash)
-  // Get a list of chunk groups that contain one of those hashes.
-  const rootChunkGroups = compilation.chunkGroups.filter((chunkGroup) => {
-    return chunkGroup.chunks.filter((chunk) => rootHashes.includes(chunk.renderedHash))
-  })
-  // Get an id for each of those chunk groups.
-  const rootChunkGroupsIds = new Set(rootChunkGroups.map(({ id }) => id))
-  // Return true iff the chunk we're passed belongs to a group whose id is in
-  // the list of root chunk groups.
-  return Array.from(chunk.groupsIterable).some(({ id }) => rootChunkGroupsIds.has(id))
+module.exports = function doesChunkBelongToHtml ({
+  chunk,
+  compilation,
+  htmlPluginData,
+  pluginOptions
+}) {
+  const chunkName = recursiveChunkEntryName(chunk)
+  const options = htmlPluginData.plugin.options
+  return isChunksFiltered(chunkName, options.chunks, options.excludeChunks)
+}
+
+// modify from html-webpack-plugin/index.js `filterChunks`
+function isChunksFiltered (chunkName, includedChunks, excludedChunks) {
+  // Skip if the chunks should be filtered and the given chunk was not added explicity
+  if (Array.isArray(includedChunks) && includedChunks.indexOf(chunkName) === -1) {
+    return false
+  }
+  // Skip if the chunks should be filtered and the given chunk was excluded explicity
+  if (Array.isArray(excludedChunks) && excludedChunks.indexOf(chunkName) !== -1) {
+    return false
+  }
+  // Add otherwise
+  return true
+}
+
+function recursiveChunkEntryName (chunk) {
+  const [chunkGroup] = chunk.groupsIterable
+  return _recursiveChunkGroup(chunkGroup)
+}
+
+function _recursiveChunkGroup (chunkGroup) {
+  if (chunkGroup instanceof EntryPoint) {
+    return chunkGroup.name
+  } else {
+    const [chunkParent] = chunkGroup.getParents()
+    return _recursiveChunkGroup(chunkParent)
+  }
 }

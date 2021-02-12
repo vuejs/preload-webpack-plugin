@@ -64,7 +64,7 @@ function extractChunks ({ compilation, optionsInclude }) {
     }
   }
 
-  let chunks = compilation.chunks
+  let chunks = [...compilation.chunks]
 
   if (Array.isArray(includeChunks)) {
     chunks = chunks.filter((chunk) => {
@@ -99,7 +99,18 @@ function extractChunks ({ compilation, optionsInclude }) {
   if (includeType === 'allAssets') {
     // Every asset, regardless of which chunk it's in.
     // Wrap it in a single, "psuedo-chunk" return value.
-    return [{ files: Object.keys(compilation.assets) }]
+    // Note: webpack5 will extract license default, we do not need to preload them
+    const licenseAssets = [...compilation.assetsInfo.values()]
+      .map((info) => {
+        if (info.related && info.related.license) {
+          return info.related.license
+        }
+        return false
+      }).filter(Boolean)
+    return [{
+      files: Object.keys(compilation.assets)
+        .filter((t) => !licenseAssets.includes(t))
+    }]
   }
 
   return chunks
