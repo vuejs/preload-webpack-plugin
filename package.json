@@ -24,7 +24,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "init-project": "yarn && cd test\\e2e\\webpack4 && yarn",
+    "init-project": "yarn && cd test/e2e/webpack4 && yarn",
     "lint": "eslint --format=codeframe .",
     "test": "npm run lint && node test/copySrc.js && jasmine test/unit/* test/e2e/*/index.js",
     "coverage": "nyc npm run test",
