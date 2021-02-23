@@ -66,13 +66,13 @@ Installation
 First, install the package as a dependency in your package.json:
 
 ```sh
-$ npm install --save-dev preload-webpack-plugin
+$ npm install --save-dev @vue/preload-webpack-plugin
 ```
 
 Alternatively, using yarn:
 
 ```sh
-yarn add -D preload-webpack-plugin
+yarn add -D @vue/preload-webpack-plugin
 ```
 
 Usage
