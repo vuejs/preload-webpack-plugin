@@ -81,7 +81,7 @@ Usage
 Next, in your Webpack config, `require()` the preload plugin as follows:
 
 ```js
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
 ```
 
 and finally, configure the plugin in your Webpack `plugins` array after `HtmlWebpackPlugin`:
