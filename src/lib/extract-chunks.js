@@ -52,7 +52,7 @@ function extractChunks ({ compilation, optionsInclude }) {
   let includeChunks
   let includeType
   let includeEntryPoints
-  if (optionsInclude && typeof optionsInclude === 'object') {
+  if (optionsInclude && typeof optionsInclude === 'object' && !Array.isArray(optionsInclude)) {
     includeType = optionsInclude.type
     includeChunks = optionsInclude.chunks
     includeEntryPoints = optionsInclude.entries
